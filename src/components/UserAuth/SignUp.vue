@@ -11,6 +11,10 @@
         <label >Enter Password</label>
         <input type="password" placeholder="Enter Password" v-model="password"/><br>
         <button class="btn" v-on:click="SignUp">Sign Up</button>
+        <h5>
+            Do you have Account  : 
+            <router-link to="/signin" class="log-test">Login</router-link>
+        </h5>
     </div>
 </template>
 <script>
@@ -33,37 +37,26 @@ export default {
             email:this.email,
             password:this.password
           });
-          console.warn(result);
+          //console.warn(result);
           if(result.status==201){
             alert("Sign Up Done")
+            localStorage.setItem("user-info",JSON.stringify(result.data))
+            this.$router.push({name:'Home'})
           }
-          localStorage.setItem("user-info",JSON.stringify(result.data))
+         
         }
+    },
+    mounted(){
+       // console.warn("mounted")
+       let user=localStorage.getItem('user-info');
+       if(user)
+       {
+        this.$router.push({name:'Home'});
+       }
     }
+
 }
 </script>
 <style scoped>
-    .logo{
-        width: 100px;
-    }
-    .register input{
-        width: 300px;
-    height: 30px;
-    padding-left: 20px;
-    margin-bottom: 30px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    border: 1px solid skyblue;
-    }
-    .register button{
-    width: 300px;
-    height: 40px;
-    border: 1px solid skyblue;
-    color: white;
-    background: skyblue;
-    cursor: pointer;
-    border-radius: 10px;
-    }
+   
 </style>
