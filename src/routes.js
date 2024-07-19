@@ -29,7 +29,7 @@ const routes=[
     {
         name:'Update-Resto',
         component:Update,
-        path:'/update'
+        path:'/update/:id'
     }
 ]
 

@@ -39,7 +39,9 @@ export default {
           //console.warn(result);
           if(result.status==201){
             alert("New Restorent Added")
-           
+            this.restaurant.name = '';
+          this.restaurant.address = '';
+          this.restaurant.contact = '';
           }
          
         }

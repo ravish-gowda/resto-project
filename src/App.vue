@@ -26,7 +26,7 @@ export default {
 .logo{
         width: 100px;
     }
-    .login input,.register input,.add input{
+    .login input,.register input,.add input ,.update input{
     width: 300px;
     height: 30px;
     padding-left: 20px;
@@ -37,7 +37,7 @@ export default {
     border-radius: 10px;
     border: 1px solid skyblue;
     }
-    .login button,.register button,.add button{
+    .login button,.register button,.add button,.update button{
     width: 300px;
     height: 40px;
     border: 1px solid skyblue;
